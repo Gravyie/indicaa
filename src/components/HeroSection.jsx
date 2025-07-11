@@ -7,21 +7,21 @@ import 'swiper/css/navigation';
 
 const slides = [
   {
-    image: '/images/Hero1.jpeg',
+    image: '/images/Hero1.jpg',
     headline: 'Global Leaders in Scrap Metal Trade',
     text: 'With over 3.4 million tons shipped annually, Indicaa delivers quality, reliability, and reach like no other.',
     cta: 'Explore Our Reach',
     link: '#global-reach',
   },
   {
-    image: '/images/Hero2.jpeg',
+    image: '/images/Hero2.jpg',
     headline: 'Ferrous & Non-Ferrous Excellence',
     text: 'From HMS to specialty alloys, we move metals the world depends on — ethically and efficiently.',
     cta: 'View Our Products',
     link: '#products',
   },
   {
-    image: '/images/Hero3.jpeg',
+    image: '/images/Hero3.jpg',
     headline: 'Driving a Greener Tomorrow',
     text: 'Indicaa is at the forefront of sustainable sourcing, circular economies, and environmental compliance.',
     cta: 'Learn About Our Values',
@@ -47,7 +47,7 @@ const HeroSection = () => {
                 alt="Hero Slide"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/50"></div>
+              <div className="absolute inset-0 bg-black/30"></div>
 
               <div className="relative z-10 h-full w-full flex items-center justify-center text-center px-4">
                 <motion.div
