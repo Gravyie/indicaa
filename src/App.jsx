@@ -1,27 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/NavBar';
-import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import ProductsSection from './components/ProductsSection';
-import GlobalReachSection from './components/GlobalReachSection';
-import WhyIndicaaSection from './components/WhyIndicaaSection';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import AchievementsSection from './components/AchievementsSection';
+import LandingPage from './pages/LandingPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ProductsSection />
-      <GlobalReachSection />
-      <WhyIndicaaSection />
-      <AchievementsSection />
-      <ContactSection />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   )
 }
 

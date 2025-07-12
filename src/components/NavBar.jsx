@@ -1,4 +1,16 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+
+const navItems = [
+  { name: 'HOME', path: '/' },
+  { name: 'ABOUT US', path: '/about' },
+  { name: 'PRODUCTS', path: '/products' },
+  { name: 'GLOBAL REACH', path: '/global-reach' },
+  { name: 'PARTNERS', path: '/partners' },
+  { name: 'QUALITY POLICY', path: '/quality-policy' },
+  { name: 'CAREERS', path: '/careers' },
+  { name: 'CONTACT US', path: '/contact-us' },
+];
 
 const Navbar = () => {
   return (
@@ -6,29 +18,26 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo Section */}
         <div className="flex items-center gap-4 border-r border-[#5b6770] pr-6">
-          <img src="/images/logo.png" alt="Indicaa Logo" className="h-14 w-auto" />
+          <Link to="/">
+            <img src="/images/logo.png" alt="Indicaa Logo" className="h-14 w-auto" />
+          </Link>
         </div>
 
         {/* Nav Links */}
         <ul className="flex gap-6 text-sm font-medium tracking-wider uppercase">
-          {[
-            'HOME',
-            'ABOUT US',
-            'PRODUCTS',
-            'GLOBAL REACH',
-            'PARTNERS',
-            'QUALITY POLICY',
-            'CAREERS',
-            'CONTACT US',
-          ].map((link) => (
-            <li key={link}>
-              <a
-                href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                className="relative group transition duration-300"
+          {navItems.map(({ name, path }) => (
+            <li key={name}>
+              <NavLink
+                to={path}
+                className={({ isActive }) =>
+                  `relative group transition duration-300 ${
+                    isActive ? 'text-[#a6b1bb]' : ''
+                  }`
+                }
               >
-                <span className="group-hover:text-[#a6b1bb]">{link}</span>
+                <span className="group-hover:text-[#a6b1bb]">{name}</span>
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-[#9ea5ab] to-[#d3d7dc] group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
